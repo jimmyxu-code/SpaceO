@@ -6,6 +6,8 @@ All notable user-visible changes are recorded here. SpaceO follows
 
 ## [Unreleased]
 
+- Stop the timed session janitor after a host-health refusal instead of retrying the same
+  sticky failure every three seconds. Retain display owners and passive diagnostics.
 - Wait for two consecutive ColorSync CPU intervals below 25% before changing the display
   graph. A settling refusal retains the display without invalidating it; ordinary use keeps
   the existing 50% hard health limit. Report reconfiguration readiness separately in health
