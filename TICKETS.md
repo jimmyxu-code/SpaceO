@@ -32,6 +32,14 @@ Status definitions:
   that the first refusal stops retries and never invalidates the retained display.
 - Verification is tracked in [janitor maintenance](docs/validation/2026-10-11-janitor-maintenance.md).
 
+### October 11 atomic health expiry
+
+- Keep the monotonic clock and health timestamps in one locked expiry snapshot. A reader
+  waiting behind a fresh assessment must not report a false clock reversal.
+- A bounded concurrent fixture reproduces the original false refusal before the fix and
+  verifies ready/settled health afterward. Actual expiry and failure thresholds are unchanged.
+- Evidence: [atomic expiry](docs/validation/2026-10-11-atomic-health-expiry.md).
+
 ### October 4 maintenance release 1.0.7
 
 - Published 1.0.7 as latest after source/CI, protected candidate construction, independent
